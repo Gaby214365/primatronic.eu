@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "matlab": {
+      "command": "C:\\Users\\GABI\\mcp-servers\\matlab-mcp-core-server-win64.exe",
+      "args": []
+    }
+  }
+}
