@@ -63,6 +63,17 @@ export function Footer() {
           <p className="text-xs text-muted">
             &copy; {new Date().getFullYear()} Primatronic. All rights reserved.
           </p>
+          <p className="text-xs text-muted">
+            Website by{" "}
+            <a
+              href="https://wudoseo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted no-underline hover:text-foreground transition-colors font-medium"
+            >
+              WudoSEO
+            </a>
+          </p>
         </div>
       </div>
     </footer>

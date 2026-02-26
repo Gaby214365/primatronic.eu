@@ -44,12 +44,21 @@ export const metadata: Metadata = {
     title: "Industrial Automation & Custom Electronics | Primatronic",
     description:
       "Custom PCBs, vision systems, MES/ERP integration and smart controls for factories. Precision engineering from Cluj-Napoca, Europe.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Primatronic - Industrial Automation & Custom Electronics",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Industrial Automation & Custom Electronics | Primatronic",
     description:
       "Custom PCBs, vision systems, MES/ERP integration and smart controls for factories. Precision engineering from Cluj-Napoca, Europe.",
+    images: ["/twitter-image"],
   },
   alternates: {
     canonical: "/",
