@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
@@ -44,6 +45,19 @@ export function Hero() {
               See case studies &rarr;
             </Link>
           </div>
+        </div>
+
+        {/* Hero image */}
+        <div className="mt-16 md:mt-20 rounded-2xl overflow-hidden shadow-2xl mx-auto max-w-4xl">
+          <Image
+            src="/images/primatronic1.png"
+            alt="Primatronic S.R.L. custom processor chip powering industrial automation solutions"
+            title="Primatronic - Custom Industrial Electronics & Automation"
+            width={1200}
+            height={675}
+            className="w-full h-auto"
+            priority
+          />
         </div>
 
         {/* Stats bar */}

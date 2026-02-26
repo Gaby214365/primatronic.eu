@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const verticals = [
@@ -8,7 +9,9 @@ const verticals = [
       "Replace isolated systems with integrated production monitoring. Real-time KPIs, predictive maintenance, and automation your floor staff can run without retraining.",
     cta: "See MES case study",
     href: "/case-studies/mes-production-monitoring",
-    // For Alex & Maria
+    image: "/images/MES_photo.png",
+    imageAlt: "Manufacturing Execution System (MES) for real-time production monitoring and factory analytics",
+    imageTitle: "MES - Smart Factory Production Monitoring",
   },
   {
     label: "Automotive",
@@ -17,7 +20,9 @@ const verticals = [
       "Smart knobs, haptic interfaces, and integrated displays that meet automotive-grade safety and certification standards. From concept to production-ready components.",
     cta: "See HMI case study",
     href: "/case-studies/automotive-hmi-smart-knob",
-    // For Sarah
+    image: "/images/smart_knob.png",
+    imageAlt: "Smart rotary knob with LED haptic feedback for automotive HMI interface design",
+    imageTitle: "Automotive Smart Knob - Haptic HMI Controller",
   },
   {
     label: "Research & Labs",
@@ -26,7 +31,9 @@ const verticals = [
       "Custom-built automation for experimental setups, data acquisition, and process control. Higher throughput, fewer manual errors, more time for actual research.",
     cta: "Get in touch",
     href: "/contact",
-    // For Dr. Reed
+    image: "/images/PCB_design.png",
+    imageAlt: "Custom PCB circuit board design with microcontrollers for precision lab automation",
+    imageTitle: "Custom PCB Design for Lab & Research Automation",
   },
 ];
 
@@ -49,8 +56,19 @@ export function Verticals() {
           {verticals.map((v) => (
             <div
               key={v.label}
-              className="rounded-2xl bg-white border border-ring p-8 flex flex-col"
+              className="rounded-2xl bg-white border border-ring overflow-hidden flex flex-col"
             >
+              <div className="relative aspect-[16/9] w-full">
+                <Image
+                  src={v.image}
+                  alt={v.imageAlt}
+                  title={v.imageTitle}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-1">
               <p className="text-[10px] font-medium uppercase tracking-widest text-muted mb-6">
                 {v.label}
               </p>
@@ -64,6 +82,7 @@ export function Verticals() {
               >
                 {v.cta} &rarr;
               </Link>
+              </div>
             </div>
           ))}
         </div>

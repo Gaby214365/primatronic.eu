@@ -6,6 +6,7 @@ export interface CaseStudy {
   date: string;
   client?: string;
   image?: string;
+  imageAlt?: string;
   content: string;
 }
 
@@ -19,6 +20,8 @@ export const caseStudies: CaseStudy[] = [
     category: "Automotive",
     date: "2025-01-15",
     client: "GLA Automotive Technology SRL",
+    image: "/images/smart_knob.png",
+    imageAlt: "Smart rotary knob with LED haptic feedback designed for automotive HMI interfaces",
     content: `
 In collaboration with GLA Automotive Technology SRL, we developed smart knobs — advanced rotary controllers
 that represent an evolution of traditional physical controls in automotive Human-Machine Interface (HMI) design.
@@ -38,6 +41,8 @@ drivers focused on the road while providing rich, tactile interaction.
       "Real-time factory floor visibility with status tracking, operation genealogy, and KPI dashboards for a manufacturing client.",
     category: "Software",
     date: "2024-11-20",
+    image: "/images/MES_photo.png",
+    imageAlt: "Manufacturing Execution System dashboard for real-time production monitoring and analytics",
     content: `
 We built a comprehensive MES (Manufacturing Execution System) solution that bridges the gap between
 business planning (ERP) and the actual production process.

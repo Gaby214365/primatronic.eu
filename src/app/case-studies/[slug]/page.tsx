@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudy } from "@/lib/case-studies";
@@ -123,6 +124,20 @@ export default async function CaseStudyPage({ params }: Props) {
             })}
           </time>
         </div>
+
+        {cs.image && (
+          <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-12">
+            <Image
+              src={cs.image}
+              alt={cs.imageAlt || cs.title}
+              title={cs.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority
+            />
+          </div>
+        )}
 
         <div className="prose prose-lg max-w-none">
           {cs.content.split("\n\n").map((paragraph, i) => (

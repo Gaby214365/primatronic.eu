@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { caseStudies } from "@/lib/case-studies";
 
@@ -60,18 +61,32 @@ export default function CaseStudiesPage() {
               className="group block rounded-2xl border border-ring bg-white no-underline transition-all hover:shadow-lg hover:-translate-y-1"
             >
               <div className="grid md:grid-cols-3 gap-0">
-                {/* Number + Category */}
-                <div className="flex flex-col justify-between p-8 md:border-r border-ring">
-                  <span className="text-6xl font-bold text-ring">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="mt-6">
-                    <span className="rounded-full bg-surface px-3 py-1 text-xs font-medium text-muted">
-                      {cs.category}
+                {/* Image + Category */}
+                <div className="flex flex-col md:border-r border-ring">
+                  {cs.image && (
+                    <div className="relative aspect-[4/3] w-full">
+                      <Image
+                        src={cs.image}
+                        alt={cs.imageAlt || cs.title}
+                        title={cs.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  )}
+                  <div className="p-8 flex items-center justify-between md:flex-col md:items-start md:justify-start gap-3">
+                    <span className="text-6xl font-bold text-ring">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    {cs.client && (
-                      <p className="mt-3 text-xs text-muted">{cs.client}</p>
-                    )}
+                    <div className="mt-0 md:mt-6">
+                      <span className="rounded-full bg-surface px-3 py-1 text-xs font-medium text-muted">
+                        {cs.category}
+                      </span>
+                      {cs.client && (
+                        <p className="mt-3 text-xs text-muted">{cs.client}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
 
